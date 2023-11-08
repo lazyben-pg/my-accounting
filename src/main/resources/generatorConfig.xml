@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <!--加载jdbc.properties中的属性-->
+    <properties resource="application.yml"/>
+
+    <!-- context id 可以自由定义 targetRuntime 选择 Mybatis3 -->
+    <context id="lazyben" targetRuntime="Mybatis3">
+        <!--自动生成toString方法-->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <!-- 注释信息配置 -->
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释，默认为 false -->
+            <property name="suppressAllComments" value="true"/>
+            <!-- 是否阻止生成的注释包含时间戳，默认为 false -->
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <!--连接数据库信息-->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/accounting?useSSL=false"
+                        userId="root"
+                        password="123"/>
+
+        <!--自动生成的 POJO 类存放包路径 -->
+        <javaModelGenerator targetPackage="com.lazyben.accounting.model" targetProject="src/main/java"/>
+
+        <!--自动生成的*Mapper.xml文件存放路径 -->
+        <sqlMapGenerator targetPackage="com.lazyben.accounting.mapper" targetProject="src/main/resources"/>
+
+        <!--自动生成的*Mapper.java存放路径 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.lazyben.accounting.mapper" targetProject="src/main/java"/>
+
+        <!-- 逆向解析的表 domainObjectName 是生成的 POJO 类类名 -->
+        <table tableName="userinfo" domainObjectName="UserInfo"/>
+
+    </context>
+</generatorConfiguration>
