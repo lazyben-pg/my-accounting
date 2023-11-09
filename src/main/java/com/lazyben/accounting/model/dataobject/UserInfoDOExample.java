@@ -1,17 +1,17 @@
-package com.lazyben.accounting.model;
+package com.lazyben.accounting.model.dataobject;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class UserInfoExample {
+public class UserInfoDOExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public UserInfoExample() {
+    public UserInfoDOExample() {
         oredCriteria = new ArrayList<>();
     }
 

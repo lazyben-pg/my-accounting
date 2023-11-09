@@ -1,6 +1,7 @@
 package com.lazyben.accounting.controller;
 
-import com.lazyben.accounting.model.UserInfo;
+import com.lazyben.accounting.model.dataobject.UserInfoDO;
+import com.lazyben.accounting.model.viewobject.UserInfoVO;
 import com.lazyben.accounting.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,7 @@ public class UserInfoController {
     }
 
     @GetMapping("{id}")
-    public UserInfo getUserById(@PathVariable("id") long id) {
+    public UserInfoVO getUserById(@PathVariable("id") long id) {
         return userInfoService.getUserById(id);
     }
 }

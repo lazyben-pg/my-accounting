@@ -1,8 +1,15 @@
-package com.lazyben.accounting.model;
+package com.lazyben.accounting.model.dataobject;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-public class UserInfo {
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class UserInfoDO {
     private Long id;
 
     private String username;
@@ -51,20 +58,5 @@ public class UserInfo {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", username=").append(username);
-        sb.append(", password=").append(password);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", updateTime=").append(updateTime);
-        sb.append("]");
-        return sb.toString();
     }
 }
