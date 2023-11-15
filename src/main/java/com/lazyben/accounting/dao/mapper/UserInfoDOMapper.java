@@ -1,4 +1,4 @@
-package com.lazyben.accounting.mapper;
+package com.lazyben.accounting.dao.mapper;
 
 import com.lazyben.accounting.model.dataobject.UserInfoDO;
 import com.lazyben.accounting.model.dataobject.UserInfoDOExample;

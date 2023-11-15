@@ -30,10 +30,10 @@
         <javaModelGenerator targetPackage="com.lazyben.accounting.model.dataobject" targetProject="src/main/java"/>
 
         <!--自动生成的*Mapper.xml文件存放路径 -->
-        <sqlMapGenerator targetPackage="com.lazyben.accounting.mapper" targetProject="src/main/resources"/>
+        <sqlMapGenerator targetPackage="com.lazyben.accounting.dao.mapper" targetProject="src/main/resources"/>
 
         <!--自动生成的*Mapper.java存放路径 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.lazyben.accounting.mapper" targetProject="src/main/java"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.lazyben.accounting.dao.mapper" targetProject="src/main/java"/>
 
         <!-- 逆向解析的表 domainObjectName 是生成的 POJO 类类名 -->
         <table tableName="userinfo" domainObjectName="UserInfoDO"/>

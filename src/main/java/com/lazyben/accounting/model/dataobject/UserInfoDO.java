@@ -1,14 +1,7 @@
 package com.lazyben.accounting.model.dataobject;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-
 import java.util.Date;
 
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
 public class UserInfoDO {
     private Long id;
 

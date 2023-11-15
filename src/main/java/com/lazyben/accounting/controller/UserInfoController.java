@@ -1,5 +1,6 @@
 package com.lazyben.accounting.controller;
 
+import com.lazyben.accounting.converter.btv.UserInfoBTVConverter;
 import com.lazyben.accounting.exception.InvalidParameterException;
 import com.lazyben.accounting.exception.ResourceNotFoundException;
 import com.lazyben.accounting.model.viewobject.UserInfoVO;
@@ -18,10 +19,12 @@ import java.util.Optional;
 @RequestMapping("/users")
 public class UserInfoController {
     private final UserInfoService userInfoService;
+    private final UserInfoBTVConverter userInfoBTVConverter;
 
     @Autowired
-    public UserInfoController(UserInfoService userInfoService) {
+    public UserInfoController(UserInfoService userInfoService, UserInfoBTVConverter userInfoBTVConverter) {
         this.userInfoService = userInfoService;
+        this.userInfoBTVConverter = userInfoBTVConverter;
     }
 
     @GetMapping("{id}")
@@ -32,6 +35,6 @@ public class UserInfoController {
         var userInfo = Optional.ofNullable(userInfoService.getUserById(id))
                 .orElseThrow(() -> new ResourceNotFoundException(String.format("User id %s not found.", id)));
 
-        return ResponseEntity.ok(userInfo);
+        return ResponseEntity.ok(userInfoBTVConverter.convert(userInfo));
     }
 }

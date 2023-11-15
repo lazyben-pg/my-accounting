@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.lazyben.accounting.mapper")
+@MapperScan("com.lazyben.accounting.dao.mapper")
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
