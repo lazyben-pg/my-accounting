@@ -1,7 +1,7 @@
 package com.lazyben.accounting.dao;
 
 import com.lazyben.accounting.converter.dtb.UserInfoDTBConverter;
-import com.lazyben.accounting.mapper.UserInfoDOMapper;
+import com.lazyben.accounting.dao.mapper.UserInfoDOMapper;
 import com.lazyben.accounting.model.businessobject.UserInfoBO;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
