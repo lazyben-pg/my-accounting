@@ -11,16 +11,16 @@ public class UserInfoBTVConverter extends Converter<UserInfoBO, UserInfoVO> {
     @Override
     protected UserInfoVO doForward(UserInfoBO userInfoBO) {
         return UserInfoVO.builder()
-                .id(userInfoBO.getId())
-                .username(userInfoBO.getUsername())
-                .build();
+                         .id(userInfoBO.getId())
+                         .username(userInfoBO.getUsername())
+                         .build();
     }
 
     @Override
     protected UserInfoBO doBackward(UserInfoVO userInfoVO) {
         return UserInfoBO.builder()
-                .id(userInfoVO.getId())
-                .username(userInfoVO.getUsername())
-                .build();
+                         .id(userInfoVO.getId())
+                         .username(userInfoVO.getUsername())
+                         .build();
     }
 }

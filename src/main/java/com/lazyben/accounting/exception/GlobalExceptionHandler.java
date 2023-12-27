@@ -10,12 +10,12 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ServiceException.class)
     ResponseEntity<ErrorResponse> handleResourceNotFoundException(ServiceException ex) {
         return ResponseEntity.status(ex.getStatusCode())
-                .contentType(MediaType.APPLICATION_JSON)
-                .body(ErrorResponse.builder()
-                        .statusCode(ex.getStatusCode())
-                        .errorCode(ex.getErrorCode())
-                        .message(ex.getMessage())
-                        .errorType(ex.getErrorType())
-                        .build());
+                             .contentType(MediaType.APPLICATION_JSON)
+                             .body(ErrorResponse.builder()
+                                                .statusCode(ex.getStatusCode())
+                                                .errorCode(ex.getErrorCode())
+                                                .message(ex.getMessage())
+                                                .errorType(ex.getErrorType())
+                                                .build());
     }
 }

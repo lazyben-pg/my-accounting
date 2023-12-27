@@ -33,7 +33,7 @@ public class UserInfoController {
             throw new InvalidParameterException("User id must greater than 0.");
         }
         var userInfo = Optional.ofNullable(userInfoService.getUserById(id))
-                .orElseThrow(() -> new ResourceNotFoundException(String.format("User id %s not found.", id)));
+                               .orElseThrow(() -> new ResourceNotFoundException(String.format("User id %s not found.", id)));
 
         return ResponseEntity.ok(userInfoBTVConverter.convert(userInfo));
     }
