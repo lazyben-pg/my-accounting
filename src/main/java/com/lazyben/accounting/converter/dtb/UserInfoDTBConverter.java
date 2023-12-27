@@ -9,7 +9,11 @@ import org.springframework.stereotype.Component;
 public class UserInfoDTBConverter extends Converter<UserInfoDO, UserInfoBO> {
     @Override
     protected UserInfoBO doForward(UserInfoDO userInfoDO) {
-        return UserInfoBO.builder().id(userInfoDO.getId()).username(userInfoDO.getUsername()).password(userInfoDO.getPassword()).build();
+        return UserInfoBO.builder()
+                         .id(userInfoDO.getId())
+                         .username(userInfoDO.getUsername())
+                         .password(userInfoDO.getPassword())
+                         .build();
     }
 
     @Override
